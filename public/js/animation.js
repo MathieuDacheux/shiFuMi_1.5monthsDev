@@ -1,11 +1,17 @@
-const modal = document.querySelector(".modal");
-const openModalBtn = document.querySelector("#open-modal");
-const closeModalBtn = document.querySelector("#close-modal");
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".trigger");
+var closeButton = document.querySelector(".close-button");
 
-openModalBtn.addEventListener("click", function () {
-  modal.style.display = "block";
-});
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
 
-closeModalBtn.addEventListener("click", function () {
-  modal.style.display = "none";
-});
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);

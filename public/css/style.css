@@ -1,10 +1,5 @@
 /* Root Settings */
 
-@font-face {
-    font-family: 'terminal';
-    src: url(./public/assets/fonts/tifax.ttf);
-}
-
 /* Globals Settings */
 
 * {
@@ -19,12 +14,22 @@ body {
     box-sizing: border-box;
 }
 
+img {
+    width: 150px;
+}
+
+@media screen and (max-width: 576px) {
+    img {
+        width: 85px;
+    }
+}
+
 /* Font Settings */
 
 html {
     color: #f2f2f6;
     font-size: 15px;
-    font-family: 'terminal' ,-apple-system , system-ui , BlinkMacSystemFont , "Segoe UI" ,Roboto , "Helvetica Neue" , Arial , sans-serif;
+    font-family: -apple-system , system-ui , BlinkMacSystemFont , "Segoe UI" ,Roboto , "Helvetica Neue" , Arial , sans-serif;
 }
 
 h1 {
@@ -52,6 +57,21 @@ p {
     padding-top: 1rem;
     font-size: 1.75rem;
     font-weight: 700;
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
 }
 
 /* Navbar Blocks */
@@ -84,17 +104,10 @@ main {
 }
 
 .resultFight {
-    height: 5vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.containerCounter {
-    height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .counterFight {
@@ -117,9 +130,19 @@ main {
     height: 40vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: row wrap;
+    justify-content: space-around;
+    flex-flow: row wrap;
 }
+
+@media screen and (max-width: 576px) {
+    .beforeFight div {
+        width: 50%;
+    }
+    .winContainer, .loseContainer {
+        width: 50%;
+    }
+}
+
 
     /* Choice Button */
 
@@ -128,79 +151,98 @@ button {
     border-radius: 10px;
     background: none ;
 }
-
     /* Modal */
 
-        /* Style boutton */
-
-#open-modal {
+.trigger {
+    text-align: center;
+    padding: .5rem .5rem;
+    background: #ff3b30;
+    color: #fff;
+    font-size: 1.5rem;
+    outline: none;
     border: none;
-    background-color: #ff3b30;
-    border-radius: 10px;
-    padding: 1rem 1.5rem;
-    font-size: 1.25rem;
-    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
-    color: #f2f2f6;
-    user-select: none;
-    transition: .5s ease;
 }
-
-#open-modal:hover {
-    transform: translate(-3px, 3px);  
-}
-
-        /* Style modal */
-
+  
 .modal {
-    display: none;
     position: fixed;
-    top: 20vh;
     left: 0;
+    top: 0;
     width: 100%;
-    /* height: 100%; */
-    background-color: rgba(0, 0, 0, 0.2);
-}
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  }
 
 .modal-content {
-    margin: auto auto;
-    max-height: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
     max-width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    animation: scale 0.5s ease;
-    border-radius: 10px;
-    box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.02),
-        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.03),
-        100px 100px 80px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
 }
 
-.modal-body {
-    margin-top: 1rem;
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.close-button {
+    width: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button p {
+    padding-top: 0;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.modal-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
 iframe {
-    width: 550px;
-    height: 300px;
+    border-radius: 5px;
 }
-
-#close-modal {
-    float: right;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Modal scale animation */
-@keyframes scale {
-    from {
-        transform: scale(0);
+  
+@media screen and (max-width: 576px) {
+    .modal-content {
+        width: 300px;
     }
+    iframe {
+        width: 100%;
+    }
+}
 
-    to {
-        transform: scale(1);
+@media screen and (min-width: 577px) and (max-width: 700px) {
+    .modal-content {
+        width: 500px;
+    }
+    iframe {
+        width: 100%;
     }
 }
