@@ -8,7 +8,8 @@
 }
 
 body {
-    background-color: #1c1c1e;
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);       
     width: 90%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -156,7 +157,7 @@ button {
 .trigger {
     text-align: center;
     padding: .5rem .5rem;
-    background: #ff3b30;
+    background: #FBDA61;
     color: #fff;
     font-size: 1.5rem;
     outline: none;
