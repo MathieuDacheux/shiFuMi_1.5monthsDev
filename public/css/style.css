@@ -1,0 +1,206 @@
+/* Root Settings */
+
+@font-face {
+    font-family: 'terminal';
+    src: url(./public/assets/fonts/tifax.ttf);
+}
+
+/* Globals Settings */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1c1c1e;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Font Settings */
+
+html {
+    color: #f2f2f6;
+    font-size: 15px;
+    font-family: 'terminal' ,-apple-system , system-ui , BlinkMacSystemFont , "Segoe UI" ,Roboto , "Helvetica Neue" , Arial , sans-serif;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+h2 {
+    color: #ff3b30;
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.modal-content {
+    color: #1c1c1e;;
+}
+
+p {
+    padding-top: 1rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+/* Navbar Blocks */
+
+nav {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Main Blocks */
+
+main {
+    height: 90vh;
+}
+
+.beforeFight {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.beforeFight div {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultFight {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerCounter {
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.counterFight {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.winContainer, .loseContainer {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerChoice {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: row wrap;
+}
+
+    /* Choice Button */
+
+button {
+    border: 0;
+    border-radius: 10px;
+    background: none ;
+}
+
+    /* Modal */
+
+        /* Style boutton */
+
+#open-modal {
+    border: none;
+    background-color: #ff3b30;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #f2f2f6;
+    user-select: none;
+    transition: .5s ease;
+}
+
+#open-modal:hover {
+    transform: translate(-3px, 3px);  
+}
+
+        /* Style modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 20vh;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    margin: auto auto;
+    max-height: 600;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    animation: scale 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.02),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.03),
+        100px 100px 80px rgba(0, 0, 0, 0.05);
+}
+
+.modal-body {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+iframe {
+    width: 550px;
+    height: 300px;
+}
+
+#close-modal {
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Modal scale animation */
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr-Fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script defer src="./public/js/script.js"></script>
+    <script defer src="./public/js/animation.js"></script>
+    <title>TTBG Game</title>
+</head>
+<body>
+
+    <!-- Modal règles du jeu -->
+
+    <div class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+            <span id="close-modal">&times;</span>
+            <h3>Règles du jeu</h3>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://www.youtube.com/embed/aQ1Nmxp55ms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+
+    <nav>
+        <h1>Let's Go to Rumble</h1>
+        <button id="open-modal">Règles</button>
+    </nav>
+
+    <!-- Main Section -->
+
+    <main>
+
+        <!-- Champs de bataille -->
+
+        <div class="beforeFight">
+            <div>
+                <img id="playerImage" src="./public/assets/img/question.png" alt="Choix du joueur">
+            </div>
+            <div>
+                <h2>VS</h2>
+            </div>
+            <div>
+                <img id="iaImage" src="./public/assets/img/question.png" alt="Choix de l'ordinateur">
+            </div>
+        </div>
+
+        <!-- Résultats de la bataille -->
+
+        <div class="resultFight">
+            <h3 class="resultText"></h3>
+        </div>
+
+        <!-- Compteur des victoires & défaites -->
+
+        <div class="counterFight">
+            <div class="winContainer">
+                <h3>Victoire</h3>
+                <p class="winCounter">0</p>
+            </div>
+            <div class="loseContainer">
+                <h3>Défaite</h3>
+                <p class="loseCounter">0</p>
+            </div>
+        </div>
+
+        <!-- Choix du joueur -->
+
+        <div class="playerChoice">
+            <div class="choiceOne">
+                <button>
+                    <img src="./public/assets/img/rock.png" alt="Roche">
+                </button>
+            </div>
+            <div class="choiceTwo">
+                <button>
+                    <img src="./public/assets/img/leaf.png" alt="Feuille">
+                </button>
+            </div>
+            <div class="choiceThree">
+                <button>
+                    <img src="./public/assets/img/scissors.png" alt="Ciseaux">
+                </button>
+            </div>
+            <div class="choiceFour">
+                <button>
+                    <img src="./public/assets/img/lizard.png" alt="Lezard">
+                </button>                
+            </div>
+            <div class="choiceFive">
+                <button>
+                    <img src="./public/assets/img/vulcan.png" alt="Spock">
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
