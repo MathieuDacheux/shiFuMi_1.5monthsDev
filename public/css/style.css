@@ -104,7 +104,7 @@ main {
 }
 
 .resultFight {
-    height: 5vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +127,7 @@ main {
 }
 
 .playerChoice {
-    height: 30vh;
+    height: 35vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
